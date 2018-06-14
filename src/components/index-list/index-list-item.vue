@@ -21,6 +21,7 @@
 
   const COMPONENT_NAME = 'cube-index-list-item'
   const ACTIVE_CLS = 'cube-index-list-item_active'
+  const ACTIVE_TOUCH_CLS = 'cube-index-list-item_touch_active'
   const EVENT_SELECT = 'select'
 
   export default {
@@ -40,10 +41,10 @@
     },
     methods: {
       addActiveCls(e) {
-        addClass(e.currentTarget, ACTIVE_CLS)
+        addClass(e.currentTarget, ACTIVE_TOUCH_CLS)
       },
       removeActiveCls(e) {
-        removeClass(e.currentTarget, ACTIVE_CLS)
+        removeClass(e.currentTarget, ACTIVE_TOUCH_CLS)
       },
       selectItem() {
         this.$emit(EVENT_SELECT, this.item)
@@ -67,4 +68,6 @@
       border-none()
   .cube-index-list-item_active
     background: $index-list-item-active-bgc
+  .cube-index-list-item_touch_active
+    background: #f3f3f3;
 </style>
