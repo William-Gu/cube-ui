@@ -41,10 +41,10 @@
     },
     methods: {
       addActiveCls(e) {
-        addClass(e.currentTarget, ACTIVE_TOUCH_CLS)
+        addClass(e.currentTarget, ACTIVE_CLS)
       },
       removeActiveCls(e) {
-        removeClass(e.currentTarget, ACTIVE_TOUCH_CLS)
+        removeClass(e.currentTarget, ACTIVE_CLS)
       },
       selectItem() {
         this.$emit(EVENT_SELECT, this.item)
