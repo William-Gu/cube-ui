@@ -14,7 +14,7 @@
         </h1>
         <ul>
           <slot>
-            <cube-index-list-group v-for="(group, index) in data" :key="index" :group="group" @select="selectItem">
+            <cube-index-list-group v-for="(group, index) in data" :key="index" :group="group" :activedStyle="activedStyle" @select="selectItem">
             </cube-index-list-group>
           </slot>
         </ul>
@@ -104,6 +104,10 @@
       },
       pullUpLoad: {
         type: [Boolean, Object],
+        default: false
+      },
+      activedStyle:{
+        type: Object,
         default: false
       }
     },

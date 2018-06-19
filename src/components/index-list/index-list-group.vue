@@ -3,7 +3,7 @@
     <h2 class="cube-index-list-anchor" v-html="group.name"></h2>
     <ul>
       <slot>
-        <cube-index-list-item v-for="(item, index) in group.items" :key="index" :item="item" @select="selectItem"></cube-index-list-item>
+        <cube-index-list-item v-for="(item, index) in group.items" :key="index" :item="item" :activedStyle="activedStyle" @select="selectItem"></cube-index-list-item>
       </slot>
     </ul>
   </li>
@@ -23,6 +23,10 @@
         default() {
           return {}
         }
+      },
+      activedStyle:{
+        type: Object,
+        default :false
       }
     },
     methods: {

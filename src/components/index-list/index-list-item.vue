@@ -2,8 +2,9 @@
   <li
     class="cube-index-list-item"
     :class="itemClass"
+    :style="activedStyle"
     @touchstart="addActiveCls"
-    @touchend="removeActiveCls"
+    @touchend="removeActiveCls" 
     @click="selectItem()">
     <slot>
       <div class="cube-index-list-item-def border-bottom-1px">
@@ -32,6 +33,10 @@
         default() {
           return {}
         }
+      },
+      activedStyle:{
+        type: Object,
+        default :false
       }
     },
     computed: {
@@ -41,10 +46,10 @@
     },
     methods: {
       addActiveCls(e) {
-        addClass(e.currentTarget, ACTIVE_CLS)
+        addClass(e.currentTarget, ACTIVE_TOUCH_CLS)
       },
       removeActiveCls(e) {
-        removeClass(e.currentTarget, ACTIVE_CLS)
+        removeClass(e.currentTarget, ACTIVE_TOUCH_CLS)
       },
       selectItem() {
         this.$emit(EVENT_SELECT, this.item)
